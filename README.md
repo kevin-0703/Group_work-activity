@@ -38,3 +38,26 @@ This procedure provides a helpful utility for database developers to generate mo
 
 
 ---
+## 2.Database Structure
+
+To use this procedure, two tables are required in our database: Employees and Attendance. Below are the table structures:
+
+sql
+CREATE TABLE Employees (
+    employee_id NUMBER PRIMARY KEY,
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50)
+);
+
+CREATE TABLE Attendance (
+    attendance_id NUMBER PRIMARY KEY,
+    employee_id NUMBER REFERENCES Employees(employee_id),
+    attendance_date DATE,
+    status VARCHAR2(10) CHECK (status IN ('Present', 'Absent'))
+);
+
+Employees Table: Stores employee information, including employee_id, first_name, and last_name.
+
+Attendance Table: Stores attendance records with an employee_id (foreign key) and status indicating if the employee was 'Present' or 'Absent' on that date.
+
+---
