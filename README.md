@@ -61,3 +61,5 @@ Employees Table: Stores employee information, including employee_id, first_name,
 Attendance Table: Stores attendance records with an employee_id (foreign key) and status indicating if the employee was 'Present' or 'Absent' on that date.
 
 ---
+
+
